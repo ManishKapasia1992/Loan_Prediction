@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Loan Predictor</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Website Title -->
+    <div class="container">
+        <h2 class='container-heading'><span class="heading_font">Loan Predictor</span></h2>
+        <div class='description'>
+            <p>A Machine Learning Web App, Built with Flask</p>
+        </div>
+    </div>
+
+    <!-- Text Area -->
+    <div class="ml-container">
+        <form action="{{ url_for('predict') }}" method="POST">
+            <input class="form-input" type="text" name="Gender" placeholder="Male=1 Female=2"><br>
+            <input class="form-input" type="text" name="Married" placeholder="Married=1 NotMarried=2"><br>
+            <input class="form-input" type="text" name="Dependents" placeholder=" No. of people depends upon applicant eg. 1 2 3"><br>
+            <input class="form-input" type="text" name="Education" placeholder="Graduate=1 Not_Graduate=2"><br>
+            <input class="form-input" type="text" name="Self_Employed" placeholder="Self_Employed=1 NotSelf_Employed=2"><br>
+            <input class="form-input" type="text" name="ApplicantIncome" placeholder="Total income (In Rupees) eg. 6000"><br>
+            <input class="form-input" type="text" name="CoapplicantIncome" placeholder="Total income of applicant's partner (In Rupees) eg. 5005"><br>
+            <input class="form-input" type="text" name="LoanAmount" placeholder="LoanAmount applicant applying for eg. 134"><br>
+            <input class="form-input" type="text" name="LoanAmount_Term" placeholder="Loan Amount Period in months eg. 240"><br>
+            <input class="form-input" type="text" name="Credit_History" placeholder="eg. Credit_History=1 NoCredit_History=0"><br>
+            <input class="form-input" type="text" name="Property_Area" placeholder="Rural=1 SemiUrban=2 Urban=3"><br>
+
+                <input type="submit" class="my-cta-button" value="Predict">
+        </form>
+    </div>
+</body>
+
